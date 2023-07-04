@@ -5,6 +5,7 @@ import Home from './components/Home/Home';
 import Footer from './components/Footer/Footer';
 import Show from './components/Show/Show';
 import Create from './components/Create/Create';
+import "./index.css";
 
 function App() {
   return (
