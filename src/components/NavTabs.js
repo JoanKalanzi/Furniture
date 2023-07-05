@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { BsFillBasket2Fill } from 'react-icons/bs';
@@ -41,7 +39,7 @@ function NavTabs() {
           </li>
           <li className="nav-item">
             <NavLink
-              to="/contact"
+              to="/about"
               end
               className={({ isActive }) =>
                 isActive ? "nav-link active" : "nav-link"
