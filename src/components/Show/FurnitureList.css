@@ -1,0 +1,32 @@
+.furniture-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.furniture-item {
+  width: 300px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.furniture-image {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.furniture-name {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.furniture-description {
+  margin-top: 5px;
+}
+
+.furniture-price {
+  margin-top: 5px;
+  font-weight: bold;
+}
