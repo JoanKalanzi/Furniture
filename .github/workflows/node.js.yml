@@ -38,3 +38,9 @@ jobs:
 
     - name: Build
       run: npm run build
+    
+    - name: Clear node_modules
+      run: rm -rf node_modules
+
+   
+      
