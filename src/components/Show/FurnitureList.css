@@ -30,3 +30,24 @@
   margin-top: 5px;
   font-weight: bold;
 }
+
+.furniture-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.furniture-buttons button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  background-color: #2196f3;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.furniture-buttons button:hover {
+  background-color: #1976d2;
+}
+

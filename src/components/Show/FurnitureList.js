@@ -1,21 +1,34 @@
 import React from 'react';
-import './FurnitureList.css'; // Import CSS file for styling
-import AddNewFurniture from '../Create/Create';
+import './FurnitureList.css';
 
-const FurnitureList = ({ data, addFurniture }) => {
+const FurnitureList = ({ data }) => {
+  const handleBuy = (name) => {
+    // Handle buy functionality for the furniture item
+    console.log(`Buy ${name}`);
+  };
+
+  const handleFavorite = (name) => {
+    // Handle favorite functionality for the furniture item
+    console.log(`Favorite ${name}`);
+  };
+
   return (
     <div className="furniture-list">
-      {/* Existing furniture items */}
       {data.map((item, index) => (
         <div className="furniture-item" key={index}>
-          {/* Render furniture item details */}
+          <img src={item.image} alt={item.name} className="furniture-image" />
+          <h3 className="furniture-name">{item.name}</h3>
+          <p className="furniture-description">{item.Description}</p>
+          <p className="furniture-price">{item.Price}</p>
+          <div className="furniture-buttons">
+            <button onClick={() => handleBuy(item.name)}>Buy</button>
+            <button onClick={() => handleFavorite(item.name)}>Favorite</button>
+          </div>
         </div>
       ))}
-
-      {/* Add New Furniture form */}
-      <AddNewFurniture addFurniture={addFurniture} />
     </div>
   );
 };
 
 export default FurnitureList;
+
