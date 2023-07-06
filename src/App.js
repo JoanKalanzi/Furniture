@@ -2,9 +2,11 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './components/Home/Home';
+import NavTabs from './components/NavTabs';
 import Footer from './components/Footer/Footer';
 import FurnitureList from './components/Show/FurnitureList';
 import AddFurniture from './components/Create/AddNewFurniture';
+import "./index.css";
 
 
 function App() {
@@ -28,6 +30,7 @@ console.log(data,'this data before update')
   return (
     <Router>
       <div>
+      <NavTabs />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/footer" element={<Footer />} />
