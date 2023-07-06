@@ -1,4 +1,4 @@
-export  const data = [ 
+const Data = [ 
   {
     "name": "Sofa",
     "Description": "Comfortable sofa for your living room",
@@ -60,3 +60,5 @@ export  const data = [
     "image": "https://furniture123.co.uk/Images/AKA004_1_Supersize.jpg?v=14"
   }
 ];
+
+export default Data

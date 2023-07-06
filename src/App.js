@@ -6,11 +6,12 @@ import NavTabs from './components/NavTabs';
 import Footer from './components/Footer/Footer';
 import FurnitureList from './components/Show/FurnitureList';
 import AddFurniture from './components/Create/AddNewFurniture';
+import  Data from './components/data'
 import "./index.css";
 
 function App() {
   const [data, setData] = useState([]);
-console.log(data,'this data before update')
+  console.log(data,'this data before update')
   useEffect(() => {
     const storedData = localStorage.getItem('furnitureData');
     if (storedData) {
@@ -35,7 +36,7 @@ console.log(data,'this data before update')
           <Route path="/footer" element={<Footer />} />
           <Route
             path="/show"
-            element={<FurnitureList data={data} />}
+            element={<FurnitureList data={Data} />}
           />
           <Route
             path="/addNewFurniture"
