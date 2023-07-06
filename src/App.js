@@ -6,6 +6,7 @@ import Footer from './components/Footer/Footer';
 import FurnitureList from './components/Show/FurnitureList';
 import AddFurniture from './components/Create/AddNewFurniture';
 
+
 function App() {
   const [data, setData] = useState([]);
 console.log(data,'this data before update')
