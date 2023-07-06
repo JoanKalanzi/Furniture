@@ -1,20 +1,29 @@
+/* eslint-disable react/jsx-no-undef */
 import React from "react";
+import './home.css'
+
+
+
 
 function Home() {
   return (
-    <div>
-      <h1>Home Page</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque velit, lobortis ut magna
-        varius, blandit rhoncus sem. Morbi lacinia nisi ac dui fermentum, sed luctus urna tincidunt.
-        Etiam ut feugiat ex. Cras non risus mi. Curabitur mattis rutrum ipsum, ut aliquet urna
-        imperdiet ac. Sed nec nulla aliquam, bibendum odio eget, vestibulum tortor. Cras rutrum
-        ligula in tincidunt commodo. Morbi sit amet mollis orci, in tristique ex. Donec nec ornare
-        elit. Donec blandit est sed risus feugiat porttitor. Vestibulum molestie hendrerit massa non
-        consequat. Vestibulum vitae lorem tortor. In elementum ultricies tempus. Interdum et
-        malesuada fames ac ante ipsum primis in faucibus.
-      </p>
-    </div>
+  <>
+  <section id="heroGrid">
+      <div id="featuredProduct" class="heroGridArea">
+        <div id="headline">
+          <h3 id="newCollection">New Collection</h3>
+          <h2>Chairs & Stools</h2>
+          <p>Armchair upholstered in synthetic leather. Powder coated steel legs.</p>
+        </div>
+      </div>
+      <div id="secondaryProduct" class="heroGridArea"></div>
+      <div id="CTA" class="heroGridArea">
+        <h4>Shop Now</h4>
+        <img src="https://media.houseandgarden.co.uk/photos/645cd63823689cbbe1bba9c1/1:1/w_1600%2Cc_limit/Massey_NH_Polebrook_141-production_digital.jpg" alt=""/>
+        </div>
+    </section>
+    
+    </>
   );
 }
 
