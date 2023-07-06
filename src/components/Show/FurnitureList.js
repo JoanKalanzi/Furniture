@@ -2,6 +2,7 @@ import React from 'react';
 import './FurnitureList.css';
 
 const FurnitureList = ({ data }) => {
+  console.log(data, "in list")
   const handleBuy = (name) => {
     // Handle buy functionality for the furniture item
     console.log(`Buy ${name}`);
@@ -14,6 +15,7 @@ const FurnitureList = ({ data }) => {
 
   return (
     <div className="furniture-list">
+      
       {data.map((item, index) => (
         <div className="furniture-item" key={index}>
           <img src={item.image} alt={item.name} className="furniture-image" />
