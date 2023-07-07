@@ -7,6 +7,7 @@ import AddFurniture from './components/Create/AddNewFurniture';
 import { commerce } from './lib/commerce';
 import NavTabs from './components/NavTabs';
 import './index.css';
+import Cart from './components/Cart/Cart';
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -39,6 +40,24 @@ function App() {
     return null; // Add a loading state or alternative UI while fetching the cart
   }
   console.log(cart,' this is cart')
+  const handleUpdateCart = async (productId, quantity) => {
+    await commerce.cart.update(productId, { quantity });
+    fetchCart()
+  };
+  const handleRemoveFromCart = async (productId) => {
+     await commerce.cart.remove(productId);
+     fetchCart()
+
+  };
+  const handleEmptyCart = async () => {
+    await commerce.cart.empty();
+    fetchCart()
+    
+  };
+  // const refreshCart = async () => {
+  //  await commerce.cart.refresh();
+  //  fetchCart()
+  // };
 
   return (
     <Router>
@@ -50,6 +69,14 @@ function App() {
           <Route
             path="/show"
             element={<FurnitureList data={products} onAddToCart={handleAddCart} />}
+          />
+          <Route
+            path ="/cart"
+            element={<Cart cart={cart} 
+            handleUpdateCart ={handleUpdateCart}
+            handleRemoveFromCart ={handleRemoveFromCart}
+            handleEmptyCart ={handleEmptyCart}
+            />}
           />
           <Route path="/addNewFurniture" element={<AddFurniture />} />
         </Routes>

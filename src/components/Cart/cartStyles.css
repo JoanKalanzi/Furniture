@@ -1,0 +1,35 @@
+.container {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+.item-details {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-details p {
+  font-size: 18px;
+}
+
+.button-container {
+  margin-top: 20px;
+}
+
+.button-container button {
+  margin-right: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #2C3C18ff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.button-container button:hover {
+  background-color: #2C3C18ff;
+}

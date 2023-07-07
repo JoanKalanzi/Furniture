@@ -1,11 +1,13 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { BsFillBasket2Fill } from 'react-icons/bs';
 import { FaUserCircle } from 'react-icons/fa';
 import Logo from './images/logo1.png';
 
 function NavTabs({ totalItems }) {
-  console.log(totalItems, 'this is in the navtabs')
+  
+  const location = useLocation();
+  
   return (
     <header className="sticky top-0 w-full px-4 lg:px-100 z-[99] lg:h-140 flex items-center">
       <div className="flex flex-col lg:flex-row lg:items-center w-full justify-between">
@@ -62,16 +64,23 @@ function NavTabs({ totalItems }) {
             className="mylogo"
           />
         </div>
+       
 
         <div className="icons w-1/4 flex justify-end items-center">
           <FaUserCircle className="text-2xl cursor-pointer mr-2" />
           <NavLink to="/login" className="login-button text-xl cursor-pointer">
             Login
           </NavLink>
+          {location.pathname === "/show"  && (
+          <NavLink to="/cart">
           <BsFillBasket2Fill className="text-2xl cursor-pointer ml-4" />
           {totalItems !== null && (
+            
             <span className="text-xl cursor-pointer">{totalItems}</span>
           )}
+          </NavLink>
+         )}
+        
         </div>
       </div>
     </header>
