@@ -5,6 +5,7 @@ import { FaUserCircle } from 'react-icons/fa';
 import Logo from './images/logo1.png';
 
 function NavTabs({ totalItems }) {
+  console.log(totalItems, 'this is in the navtabs')
   return (
     <header className="sticky top-0 w-full px-4 lg:px-100 z-[99] lg:h-140 flex items-center">
       <div className="flex flex-col lg:flex-row lg:items-center w-full justify-between">
@@ -68,7 +69,9 @@ function NavTabs({ totalItems }) {
             Login
           </NavLink>
           <BsFillBasket2Fill className="text-2xl cursor-pointer ml-4" />
-          <span className="text-xl cursor-pointer">{totalItems}</span>
+          {totalItems !== null && (
+            <span className="text-xl cursor-pointer">{totalItems}</span>
+          )}
         </div>
       </div>
     </header>
