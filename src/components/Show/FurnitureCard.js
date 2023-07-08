@@ -1,35 +1,35 @@
 import React from 'react';
-import { Card, CardMedia, CardContent, CardActions, Typography, IconButton } from '@material-ui/core';
+import { IconButton } from '@material-ui/core';
 import { AddShoppingCart } from '@material-ui/icons';
-import useStyles from './Products/styles';
+import useStyles from './Products/styles'
 
-
-const FurnitureCard= ({product, onAddToCart }) => {
-
-  const handleAddToCart = () => onAddToCart(product.id, 1);
-  console.log(product.id, 'this is product id')
-
+const FurnitureCard = ({ product, onAddToCart }) => {
   const classes = useStyles();
+  const handleAddToCart = () => onAddToCart(product.id, 1);
+
   return (
-    <Card className={classes.root}>
-    <CardMedia className={classes.media} image={product.image.url} title={product.name} />
-    <CardContent>
-      <div className={classes.cardContent}>
-        <Typography gutterBottom variant="h5" component="h2">
-          {product.name}
-        </Typography>
-        <Typography gutterBottom variant="h5" component="h2">
-          ${product.price.formatted}
-        </Typography>
+    <section className={classes.container}>
+      <div>
+        <img src={product.image.url} alt={product.name} />
       </div>
-      <Typography dangerouslySetInnerHTML={{ __html: product.description }} variant="body2" color="textSecondary" component="p" />
-    </CardContent>
-    <CardActions disableSpacing className={classes.cardActions}>
-      <IconButton aria-label="Add to Cart"onClick={handleAddToCart}>
-        <AddShoppingCart />
-      </IconButton>
-    </CardActions>
-  </Card>
+      <div className={classes.cardContent}>
+        <div className={classes.cardText}>
+          <div className={`${classes.productTitle} bigger-title`}>
+            {product.name}
+          </div>
+          <div className={classes.productPrice}>£{product.price.formatted}</div>
+        </div>
+        <div
+          className={classes.productDescription}
+          dangerouslySetInnerHTML={{ __html: product.description }}
+        />
+      </div>
+      <div className={classes.cardActions}>
+        <IconButton aria-label="Add to Cart" onClick={handleAddToCart}>
+          <AddShoppingCart />
+        </IconButton>
+      </div>
+    </section>
   );
 };
 

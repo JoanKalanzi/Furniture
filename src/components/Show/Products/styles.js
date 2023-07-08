@@ -6,8 +6,14 @@ export default makeStyles((theme) => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.default,
     padding: theme.spacing(3),
+    fontFamily: 'Ysabeau SC, sans-serif',
   },
   root: {
     flexGrow: 1,
+    fontFamily: 'Ysabeau SC, sans-serif',
   },
+  productTitle: {
+    fontSize: '24px',
+  },
+
 }));
