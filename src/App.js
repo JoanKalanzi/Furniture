@@ -1,26 +1,58 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './components/Home/Home';
-import NavTabs from './components/NavTabs';
 import Footer from './components/Footer/Footer';
-import Login from './components/Login/login';
-import Basket from './components/basket/Basket';
-import FurnitureList from './components/Show/FurnitureList';
+import FurnitureList from './components/Show/Products/FurnitureList';
 import AddFurniture from './components/Create/AddNewFurniture';
-import Data from './components/data';
-import "./index.css";
+import { commerce } from './lib/commerce';
+import NavTabs from './components/NavTabs';
+import './index.css';
+import Cart from './components/Cart/Cart';
+import Login from './components/Login/login';
 
 function App() {
+  const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState({});
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [data, setData] = useState([]);
+
+  const fetchProducts = async () => {
+    try {
+      const { data } = await commerce.products.list();
+      setProducts(data);
+    } catch (error) {
+      console.error('Error fetching products', error);
+
+    }
+  }
+  const fetchCart = async () => {
+    const cart = await commerce.cart.retrieve();
+    setCart(cart);
+  };
 
   useEffect(() => {
-    const storedData = localStorage.getItem('furnitureData');
-    if (storedData) {
-      setData(JSON.parse(storedData));
-    }
+    fetchProducts();
+    fetchCart();
   }, []);
 
+  const handleAddCart = async (productId, quantity) => {
+    await commerce.cart.add(productId, quantity);
+    fetchCart(); // Fetch the updated cart after updating it
+  }
+
+  const handleUpdateCart = async (productId, quantity) => {
+    await commerce.cart.update(productId, { quantity });
+    fetchCart()
+  };
+  const handleRemoveFromCart = async (productId) => {
+     await commerce.cart.remove(productId);
+     fetchCart()
+
+  };
+  const handleEmptyCart = async () => {
+    await commerce.cart.empty();
+    fetchCart()
+    
+  };
   useEffect(() => {
     const token = sessionStorage.getItem('token');
     setIsLoggedIn(!!token);
@@ -36,34 +68,33 @@ function App() {
     setIsLoggedIn(false);
   };
 
-  const handleAddFurniture = (newFurniture) => {
-    const updatedData = [...data, newFurniture];
-    setData(updatedData);
-    localStorage.setItem('furnitureData', JSON.stringify(updatedData));
-  };
-
   return (
     <Router>
       <div>
-        <NavTabs isLoggedIn={isLoggedIn} handleLogout={handleLogout} />
+        <NavTabs isLoggedIn={isLoggedIn} handleLogout={handleLogout} totalItems={cart.total_items} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/footer" element={<Footer />} />
           <Route
             path="/show"
-            element={<FurnitureList data={Data} />}
+            element={<FurnitureList data={products} onAddToCart={handleAddCart} />}
           />
           <Route
-            path="/addNewFurniture"
-            element={<AddFurniture onAddFurniture={handleAddFurniture} />}
+            path ="/cart"
+            element={<Cart cart={cart} 
+            handleUpdateCart ={handleUpdateCart}
+            handleRemoveFromCart ={handleRemoveFromCart}
+            handleEmptyCart ={handleEmptyCart}
+            />}
           />
+          <Route path="/addNewFurniture" element={<AddFurniture />} />
           <Route path="/login" element={<Login setToken={handleLogin} />} />
-          <Route path="/basket" element={<Basket />} />
         </Routes>
         <Footer />
       </div>
     </Router>
   );
 }
+
 
 export default App;

@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Ysabeau+SC&display=swap');
+
+.card-item {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.card-image {
+  width: 100px;
+  height: 100px;
+  margin-right: 16px;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item-content {
+  flex-grow: 1;
+}
+
+.item-name {
+  font-family: 'Ysabeau SC', sans-serif;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.item-price {
+  color: #888;
+}
+
+.card-actions {
+  display: flex;
+  align-items: center;
+}
+
+.button-actions {
+  display: flex;
+  align-items: center;
+  margin-right: 16px;
+}
+
+.quantity-button {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background-color: #d4afb9;
+  color: #333;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.plus-button {
+  margin-left: 8px;
+}
+
+.item-quantity {
+  margin: 0 8px;
+  font-weight: bold;
+}
+
+.remove-button {
+  border: none;
+  background-color: #d4afb9;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Ysabeau SC', sans-serif;
+}
