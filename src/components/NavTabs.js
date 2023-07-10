@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { BsFillBasket2Fill } from 'react-icons/bs';
 import { FaUserCircle } from 'react-icons/fa';
 import Logo from './images/logo1.png';
-// import Login from './Login';
+
 
 
 function NavTabs({ isLoggedIn, handleLogout }) {

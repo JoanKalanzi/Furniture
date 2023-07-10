@@ -4,7 +4,6 @@ import Home from './components/Home/Home';
 import NavTabs from './components/NavTabs';
 import Footer from './components/Footer/Footer';
 import Login from './components/Login/login';
-import Signup from './components/Login/signup';
 import Basket from './components/basket/Basket';
 import FurnitureList from './components/Show/FurnitureList';
 import AddFurniture from './components/Create/AddNewFurniture';
@@ -59,9 +58,9 @@ function App() {
             element={<AddFurniture onAddFurniture={handleAddFurniture} />}
           />
           <Route path="/login" element={<Login setToken={handleLogin} />} />
-          <Route path="/signup" element={<Signup />} />
           <Route path="/basket" element={<Basket />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );

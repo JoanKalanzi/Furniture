@@ -89,10 +89,10 @@ export default function Login({ setToken }) {
         <div className="mt-4">
         <p className="text-center text-gray-600">Log in with:</p>
         <div className="flex justify-center mt-2">
-            <a href="https://en-gb.facebook.com/login" className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mx-2">
+            <a href="https://en-gb.facebook.com/login" className="bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded mx-2">
             <BsFacebook className="text-xl"/>
             </a>
-            <a href="https://appleid.apple.com/" className="bg-black hover:bg-blue-500 text-white font-bold py-2 px-4 rounded mx-2">
+            <a href="https://appleid.apple.com/" className="bg-black hover:bg-gray-700 text-white font-bold py-2 px-4 rounded mx-2">
             <FaApplePay className="text-white text-xl"/>
             </a>
             <a href="https://accounts.google.com" className="bg-white border-red-600 hover:bg-red-700 text-red-600 border-2 font-bold py-2 px-4 rounded mx-2">
