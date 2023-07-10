@@ -1,18 +1,25 @@
 import React from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation , useNavigate } from 'react-router-dom';
 import { BsFillBasket2Fill } from 'react-icons/bs';
-import { FaUserCircle } from 'react-icons/fa';
 import Logo from './images/logo1.png';
 
-function NavTabs({ totalItems }) {
-  
+
+
+function NavTabs({ isLoggedIn, handleLogout ,  totalItems}) {
+  const navigate = useNavigate();
   const location = useLocation();
-  
+
+  const handleLogoutClick = () => {
+    handleLogout();
+    navigate('/');
+  };
+
   return (
+    <>
     <header className="sticky top-0 w-full px-4 lg:px-100 z-[99] lg:h-140 flex items-center">
       <div className="flex flex-col lg:flex-row lg:items-center w-full justify-between">
         <ul className="nav flex space-x-10">
-          <li className="nav-item ">
+          <li className="nav-item">
             <NavLink
               to="/"
               end
@@ -33,16 +40,18 @@ function NavTabs({ totalItems }) {
               Store
             </NavLink>
           </li>
-          <li className="nav-item">
-            <NavLink
-              to="/create"
-              className={({ isActive }) =>
-                isActive ? 'nav-link active' : 'nav-link'
-              }
-            >
-              Personalise
-            </NavLink>
-          </li>
+          {isLoggedIn && (
+            <li className="nav-item">
+              <NavLink
+                to="/addNewFurniture"
+                className={({ isActive }) =>
+                  isActive ? 'nav-link active' : 'nav-link'
+                }
+              >
+                Personalise
+              </NavLink>
+            </li>
+          )}
           <li className="nav-item">
             <NavLink
               to="/about"
@@ -66,11 +75,14 @@ function NavTabs({ totalItems }) {
         </div>
        
 
+       
         <div className="icons w-1/4 flex justify-end items-center">
-          <FaUserCircle className="text-2xl cursor-pointer mr-2" />
-          <NavLink to="/login" className="login-button text-xl cursor-pointer">
-            Login
-          </NavLink>
+          {isLoggedIn ? (
+            <>
+              <button className="login-button text-xl cursor-pointer" onClick={handleLogoutClick}>
+                Logout
+              </button>
+              
           {location.pathname === "/show"  && (
           <NavLink to="/cart">
           <BsFillBasket2Fill className="text-2xl cursor-pointer ml-4" />
@@ -80,10 +92,17 @@ function NavTabs({ totalItems }) {
           )}
           </NavLink>
          )}
-        
+      
+            </>
+          ) : (
+            <NavLink to="/login" className="login-button text-xl cursor-pointer">
+              Login
+            </NavLink>
+          )}
         </div>
       </div>
     </header>
+    </>
   );
 }
 

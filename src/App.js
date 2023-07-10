@@ -8,10 +8,12 @@ import { commerce } from './lib/commerce';
 import NavTabs from './components/NavTabs';
 import './index.css';
 import Cart from './components/Cart/Cart';
+import Login from './components/Login/login';
 
 function App() {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState({});
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const fetchProducts = async () => {
     try {
@@ -19,9 +21,9 @@ function App() {
       setProducts(data);
     } catch (error) {
       console.error('Error fetching products', error);
-    }
-  };
 
+    }
+  }
   const fetchCart = async () => {
     const cart = await commerce.cart.retrieve();
     setCart(cart);
@@ -35,11 +37,8 @@ function App() {
   const handleAddCart = async (productId, quantity) => {
     await commerce.cart.add(productId, quantity);
     fetchCart(); // Fetch the updated cart after updating it
-  };
-  if (cart === null) {
-    return null; // Add a loading state or alternative UI while fetching the cart
   }
-  console.log(cart,' this is cart')
+
   const handleUpdateCart = async (productId, quantity) => {
     await commerce.cart.update(productId, { quantity });
     fetchCart()
@@ -54,15 +53,25 @@ function App() {
     fetchCart()
     
   };
-  // const refreshCart = async () => {
-  //  await commerce.cart.refresh();
-  //  fetchCart()
-  // };
+  useEffect(() => {
+    const token = sessionStorage.getItem('token');
+    setIsLoggedIn(!!token);
+  }, []);
+
+  const handleLogin = (userToken) => {
+    sessionStorage.setItem('token', userToken);
+    setIsLoggedIn(true);
+  };
+
+  const handleLogout = () => {
+    sessionStorage.removeItem('token');
+    setIsLoggedIn(false);
+  };
 
   return (
     <Router>
       <div>
-        <NavTabs totalItems={cart.total_items} />
+        <NavTabs isLoggedIn={isLoggedIn} handleLogout={handleLogout} totalItems={cart.total_items} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/footer" element={<Footer />} />
@@ -79,10 +88,13 @@ function App() {
             />}
           />
           <Route path="/addNewFurniture" element={<AddFurniture />} />
+          <Route path="/login" element={<Login setToken={handleLogin} />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );
 }
+
 
 export default App;
