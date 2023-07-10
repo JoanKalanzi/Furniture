@@ -1,17 +1,19 @@
-
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './components/Home/Home';
 import NavTabs from './components/NavTabs';
 import Footer from './components/Footer/Footer';
+import Login from './components/Login/login';
+import Basket from './components/basket/Basket';
 import FurnitureList from './components/Show/FurnitureList';
 import AddFurniture from './components/Create/AddNewFurniture';
-import  Data from './components/data'
+import Data from './components/data';
 import "./index.css";
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [data, setData] = useState([]);
-  console.log(data,'this data before update')
+
   useEffect(() => {
     const storedData = localStorage.getItem('furnitureData');
     if (storedData) {
@@ -19,18 +21,31 @@ function App() {
     }
   }, []);
 
+  useEffect(() => {
+    const token = sessionStorage.getItem('token');
+    setIsLoggedIn(!!token);
+  }, []);
+
+  const handleLogin = (userToken) => {
+    sessionStorage.setItem('token', userToken);
+    setIsLoggedIn(true);
+  };
+
+  const handleLogout = () => {
+    sessionStorage.removeItem('token');
+    setIsLoggedIn(false);
+  };
+
   const handleAddFurniture = (newFurniture) => {
     const updatedData = [...data, newFurniture];
-    console.log(updatedData.push, "inside handleAddFurniture")
     setData(updatedData);
-    localStorage.setItem('furnitureData', JSON.stringify(updatedData))
-    console.log(localStorage, "localstorage");
+    localStorage.setItem('furnitureData', JSON.stringify(updatedData));
   };
 
   return (
     <Router>
       <div>
-      <NavTabs />
+        <NavTabs isLoggedIn={isLoggedIn} handleLogout={handleLogout} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/footer" element={<Footer />} />
@@ -42,7 +57,10 @@ function App() {
             path="/addNewFurniture"
             element={<AddFurniture onAddFurniture={handleAddFurniture} />}
           />
+          <Route path="/login" element={<Login setToken={handleLogin} />} />
+          <Route path="/basket" element={<Basket />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );

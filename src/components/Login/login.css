@@ -1,0 +1,12 @@
+.logInButton {
+    background-image: linear-gradient(to right, rgb(243, 101, 52), rgb(246, 159, 39));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* button.logInButton {
+    background: linear-gradient(to right, #FFA500, #FF4500);
+    background-clip: text;
+  }
+   */
+  
