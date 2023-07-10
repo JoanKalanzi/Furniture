@@ -1,36 +1,34 @@
 import React from 'react';
-import { IconButton } from '@material-ui/core';
-import { AddShoppingCart } from '@material-ui/icons';
-import useStyles from './Products/styles'
+import './FurnitureCard.css';
 
 const FurnitureCard = ({ product, onAddToCart }) => {
-  const classes = useStyles();
   const handleAddToCart = () => onAddToCart(product.id, 1);
 
   return (
-    <section className={classes.container}>
+    <section className="container">
       <div>
         <img src={product.image.url} alt={product.name} />
       </div>
-      <div className={classes.cardContent}>
-        <div className={classes.cardText}>
-          <div className={`${classes.productTitle} bigger-title`}>
+      <div className="card-content">
+        <div className="card-text">
+          <div className="product-title bigger-title">
             {product.name}
           </div>
-          <div className={classes.productPrice}>£{product.price.formatted}</div>
+          <div className="product-price">£{product.price.formatted}</div>
         </div>
         <div
-          className={classes.productDescription}
+          className="product-description"
           dangerouslySetInnerHTML={{ __html: product.description }}
         />
       </div>
-      <div className={classes.cardActions}>
-        <IconButton aria-label="Add to Cart" onClick={handleAddToCart}>
-          <AddShoppingCart />
-        </IconButton>
+      <div className="card-actions">
+        <button className="add-to-cart-button" onClick={handleAddToCart}>
+          Add to Cart
+        </button>
       </div>
     </section>
   );
 };
 
 export default FurnitureCard;
+
