@@ -1,13 +1,13 @@
 import React from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink, useLocation , useNavigate } from 'react-router-dom';
 import { BsFillBasket2Fill } from 'react-icons/bs';
-import { FaUserCircle } from 'react-icons/fa';
 import Logo from './images/logo1.png';
 
 
 
-function NavTabs({ isLoggedIn, handleLogout }) {
+function NavTabs({ isLoggedIn, handleLogout ,  totalItems}) {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleLogoutClick = () => {
     handleLogout();
@@ -15,6 +15,7 @@ function NavTabs({ isLoggedIn, handleLogout }) {
   };
 
   return (
+    <>
     <header className="sticky top-0 w-full px-4 lg:px-100 z-[99] lg:h-140 flex items-center">
       <div className="flex flex-col lg:flex-row lg:items-center w-full justify-between">
         <ul className="nav flex space-x-10">
@@ -72,18 +73,26 @@ function NavTabs({ isLoggedIn, handleLogout }) {
             className="mylogo"
           />
         </div>
+       
 
+       
         <div className="icons w-1/4 flex justify-end items-center">
-          <FaUserCircle className="text-2xl cursor-pointer mr-2" />
           {isLoggedIn ? (
             <>
               <button className="login-button text-xl cursor-pointer" onClick={handleLogoutClick}>
                 Logout
               </button>
-              <BsFillBasket2Fill className="text-2xl cursor-pointer ml-4" />
-              <NavLink to="/basket" className="text-xl cursor-pointer">
-                Basket
-              </NavLink>
+              
+          {location.pathname === "/show"  && (
+          <NavLink to="/cart">
+          <BsFillBasket2Fill className="text-2xl cursor-pointer ml-4" />
+          {totalItems !== null && (
+            
+            <span className="text-xl cursor-pointer">{totalItems}</span>
+          )}
+          </NavLink>
+         )}
+      
             </>
           ) : (
             <NavLink to="/login" className="login-button text-xl cursor-pointer">
@@ -93,6 +102,7 @@ function NavTabs({ isLoggedIn, handleLogout }) {
         </div>
       </div>
     </header>
+    </>
   );
 }
 
