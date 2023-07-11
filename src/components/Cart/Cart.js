@@ -4,6 +4,7 @@ import CartItem from './CartItem/CartItem';
 import { Link } from 'react-router-dom'
 
 const Cart = ({ cart , handleUpdateCart ,handleRemoveFromCart,handleEmptyCart}) => {
+  
   console.log(cart , 'in cart file --->')
 
   if (!cart || !cart.line_items) {
@@ -32,7 +33,10 @@ const Cart = ({ cart , handleUpdateCart ,handleRemoveFromCart,handleEmptyCart}) 
         <p>Subtotal: {cart.subtotal.formatted_with_symbol}</p>
         <div className="button-container">
           <button onClick ={handleEmptyCart}>Empty Cart</button>
-          <button>Checkout</button>
+          <Link to="/checkout">
+            <button>Checkout</button>
+            
+          </Link>
         </div>
       </div>
     </>
