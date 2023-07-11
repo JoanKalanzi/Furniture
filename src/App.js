@@ -9,6 +9,7 @@ import NavTabs from './components/NavTabs';
 import './index.css';
 import Cart from './components/Cart/Cart';
 import Login from './components/Login/login';
+import Checkout from './components/Checkout/Checkout1'
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -74,7 +75,6 @@ function App() {
         <NavTabs isLoggedIn={isLoggedIn} handleLogout={handleLogout} totalItems={cart.total_items} />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/footer" element={<Footer />} />
           <Route
             path="/show"
             element={<FurnitureList data={products} onAddToCart={handleAddCart} />}
@@ -89,6 +89,7 @@ function App() {
           />
           <Route path="/addNewFurniture" element={<AddFurniture />} />
           <Route path="/login" element={<Login setToken={handleLogin} />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
         <Footer />
       </div>
