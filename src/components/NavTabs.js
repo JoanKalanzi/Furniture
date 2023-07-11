@@ -3,12 +3,11 @@ import { NavLink, useLocation , useNavigate } from 'react-router-dom';
 import { BsFillBasket2Fill } from 'react-icons/bs';
 import Logo from './images/logo1.png';
 
-
-
 function NavTabs({ isLoggedIn, handleLogout ,  totalItems}) {
   const navigate = useNavigate();
   const location = useLocation();
 
+  
   const handleLogoutClick = () => {
     handleLogout();
     navigate('/');
