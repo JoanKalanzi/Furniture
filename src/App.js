@@ -9,7 +9,9 @@ import NavTabs from './components/NavTabs';
 import './index.css';
 import Cart from './components/Cart/Cart';
 import Login from './components/Login/login';
+import AboutUs from './AboutUs/AboutUs';
 import Checkout from './components/Checkout/Checkout1'
+
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -89,6 +91,7 @@ function App() {
           />
           <Route path="/addNewFurniture" element={<AddFurniture />} />
           <Route path="/login" element={<Login setToken={handleLogin} />} />
+          <Route exact path="/about" element={<AboutUs/>}/>
           <Route path="/checkout" element={<Checkout />} />
         </Routes>
         <Footer />

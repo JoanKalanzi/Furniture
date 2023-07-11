@@ -1,10 +1,6 @@
 /* eslint-disable react/jsx-no-undef */
 import React from "react";
 import './home.css'
-
-
-
-
 function Home() {
   return (
   <>
