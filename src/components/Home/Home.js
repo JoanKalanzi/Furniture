@@ -1,36 +1,44 @@
 /* eslint-disable react/jsx-no-undef */
 import React from "react";
 import './home.css'
-import Banner from '../images/banner.png';
-
 
 
 function Home() {
   return (
-  <>
-  <section className="heroGrid">
-      <div className="featuredProduct heroGridArea">
-      <div className="CTA" class="home-banner">
-        <img
-            src={process.env.PUBLIC_URL + Banner}
-            alt="banner"
-            className="banner"
-          />
+    <>
+      <section className="home">
+        <div className="home-banner">
         </div>
-        <div id="headline">
-          <h3 id="newCollection">New Collection</h3>
-          <h2>Chairs & Stools</h2>
-          <p>Armchair upholstered in synthetic leather. Powder coated steel legs.</p>
+        <div className="headline">
+          <h3 className="newCollection">New Collection</h3>
+          <h2 className="home-h2">Chairs &amp; Stools</h2>
+          <p className="home-p">Armchair upholstered in synthetic leather. Powder coated steel legs.</p>
         </div>
-      </div>
-      <div id="secondaryProduct" class="heroGridArea">
+      </section>
 
-        
-      </div>
-    </section>
-    
+      <div class="subHeading">
+      <h3>Shop Our New Collection</h3>
+    </div>
+
+    <section id="categoryGrid" className="grid">
+  <div id="bookcases" className="categoryGridArea">
+    <div className="heading">Madison</div>
+  </div>
+  <div id="bedroom" className="categoryGridArea">
+    <div className="heading">Mayfair</div>
+  </div>
+  <div id="couches" className="categoryGridArea">
+    <div className="heading">Paris</div>
+  </div>
+  <div id="patio" className="categoryGridArea">
+    <div className="heading">Royal</div>
+  </div>
+</section>
+
+
     </>
   );
 }
 
 export default Home;
+
