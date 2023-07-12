@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import { FaApplePay } from 'react-icons/fa';
 import { BsFacebook } from 'react-icons/bs';
 import { FcGoogle } from 'react-icons/fc';
-import { Link } from 'react-router-dom';
 import '../Login/login.css'
 
 
