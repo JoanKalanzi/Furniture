@@ -84,11 +84,10 @@ function NavTabs({ isLoggedIn, handleLogout ,  totalItems}) {
               
           {location.pathname === "/show"  && (
           <NavLink to="/cart">
-          <BsFillBasket2Fill className="text-2xl cursor-pointer ml-4" />
-          {totalItems !== null && (
-            
+            {totalItems !== null && (
             <span className="text-xl cursor-pointer">{totalItems}</span>
           )}
+          <BsFillBasket2Fill className="text-2xl cursor-pointer ml-4" />
           </NavLink>
          )}
       

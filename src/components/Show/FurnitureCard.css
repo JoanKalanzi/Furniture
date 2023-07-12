@@ -25,6 +25,7 @@
 .product-title {
   font-size: 20px;
   font-weight: bold;
+  font-family: Ysabeau SC, sans-serif;
 }
 
 .bigger-title {
@@ -48,7 +49,7 @@
   font-size: 16px;
   border: none;
   border-radius: 5px;
-  background-color: #2C3C18;
+  background-color: #D4AFB9;
   color: #fff;
   cursor: pointer;
 }
