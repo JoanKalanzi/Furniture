@@ -6,6 +6,10 @@
   align-items: center;
   justify-content: center;
   height: 80vh;
+ 
+}
+.main-container{
+  overflow: hidden;
 }
 
 .checkout-form {
@@ -132,4 +136,8 @@
 .success .token {
   font-weight: 500;
   font-size: 13px;
+}
+.section-head{
+  margin-top: 50px;
+
 }
