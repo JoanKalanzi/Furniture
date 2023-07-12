@@ -74,6 +74,7 @@ function NavTabs({ isLoggedIn, handleLogout ,  totalItems}) {
         </div>
        
         <div className="icons w-1/4 flex justify-end items-center">
+
   {isLoggedIn ? (
     <>
       {location.pathname === "/show" && (
@@ -94,9 +95,6 @@ function NavTabs({ isLoggedIn, handleLogout ,  totalItems}) {
     </NavLink>
   )}
 </div>
-
-       
-  
 
       </div>
     </header>

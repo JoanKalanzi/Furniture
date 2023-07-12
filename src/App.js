@@ -10,8 +10,8 @@ import './index.css';
 import Cart from './components/Cart/Cart';
 import Login from './components/Login/login';
 import AboutUs from './AboutUs/AboutUs';
-import Checkout from './components/Checkout/Checkout1'
-
+import Checkout from './components/Checkout/Checkout1';
+import ProductDetail from './ProductDetails/ProductDetail';
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -24,9 +24,9 @@ function App() {
       setProducts(data);
     } catch (error) {
       console.error('Error fetching products', error);
-
     }
-  }
+  };
+
   const fetchCart = async () => {
     const cart = await commerce.cart.retrieve();
     setCart(cart);
@@ -39,23 +39,24 @@ function App() {
 
   const handleAddCart = async (productId, quantity) => {
     await commerce.cart.add(productId, quantity);
-    fetchCart(); // Fetch the updated cart after updating it
-  }
+    fetchCart();
+  };
 
   const handleUpdateCart = async (productId, quantity) => {
     await commerce.cart.update(productId, { quantity });
-    fetchCart()
+    fetchCart();
   };
-  const handleRemoveFromCart = async (productId) => {
-     await commerce.cart.remove(productId);
-     fetchCart()
 
+  const handleRemoveFromCart = async (productId) => {
+    await commerce.cart.remove(productId);
+    fetchCart();
   };
+
   const handleEmptyCart = async () => {
     await commerce.cart.empty();
-    fetchCart()
-    
+    fetchCart();
   };
+
   useEffect(() => {
     const token = sessionStorage.getItem('token');
     setIsLoggedIn(!!token);
@@ -77,21 +78,18 @@ function App() {
         <NavTabs isLoggedIn={isLoggedIn} handleLogout={handleLogout} totalItems={cart.total_items} />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/show" element={<FurnitureList data={products} onAddToCart={handleAddCart} />} />
           <Route
-            path="/show"
-            element={<FurnitureList data={products} onAddToCart={handleAddCart} />}
+            path="/show/:id"
+            element={<ProductDetail products={products} onAddToCart={handleAddCart} />}
           />
           <Route
-            path ="/cart"
-            element={<Cart cart={cart} 
-            handleUpdateCart ={handleUpdateCart}
-            handleRemoveFromCart ={handleRemoveFromCart}
-            handleEmptyCart ={handleEmptyCart}
-            />}
+            path="/cart"
+            element={<Cart cart={cart} handleUpdateCart={handleUpdateCart} handleRemoveFromCart={handleRemoveFromCart} handleEmptyCart={handleEmptyCart} />}
           />
           <Route path="/addNewFurniture" element={<AddFurniture />} />
           <Route path="/login" element={<Login setToken={handleLogin} />} />
-          <Route exact path="/about" element={<AboutUs/>}/>
+          <Route exact path="/about" element={<AboutUs />} />
           <Route path="/checkout" element={<Checkout />} />
         </Routes>
         {/* <Footer /> */}
@@ -99,6 +97,5 @@ function App() {
     </Router>
   );
 }
-
 
 export default App;
