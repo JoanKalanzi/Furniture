@@ -42,8 +42,9 @@ const ProductDetail = ({ products, onAddToCart }) => {
     </div>
     <div className='box'>
       <div className='row'>
-        <h2>Product: {product.name}</h2>
-        <span>Price : £{product.price.formatted}</span>
+        <h2>Product: <span>{product.name}</span></h2>
+        <h2>Price : £ <span>{product.price.formatted}</span></h2>
+      
       </div>
    
        <p dangerouslySetInnerHTML={{ __html: product.description }}>
