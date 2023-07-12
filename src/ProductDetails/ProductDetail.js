@@ -52,7 +52,7 @@ const ProductDetail = ({ products, onAddToCart }) => {
       <div className='buttons'>
        <button className='cart' onClick={handleAddToCart}>Add to Cart </button>
        <Link to="/show">
-       <button className='cart' onClick={handleAddToCart}>Back to Store </button>
+       <button className='cart'>Back to Store </button>
        </Link>
        </div>
     </div>
