@@ -40,10 +40,7 @@ const Checkout = ({ cart }) => {
         if (result.token) {
           successElement.querySelector('.token').textContent = result.token.id;
           successElement.classList.add('visible');
-          // In a real integration, you'd submit the form with the token to your backend server
-          // var form = document.querySelector('form');
-          // form.querySelector('input[name="token"]').setAttribute('value', result.token.id);
-          // form.submit();
+          
         } else if (result.error) {
           errorElement.textContent = result.error.message;
           errorElement.classList.add('visible');
