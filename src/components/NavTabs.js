@@ -77,7 +77,7 @@ function NavTabs({ isLoggedIn, handleLogout ,  totalItems}) {
 
   {isLoggedIn ? (
     <>
-      {location.pathname === "/show" && (
+      {location.pathname === "/show"  && (
         <NavLink to="/cart" className="flex items-center">
           <BsFillBasket2Fill className="text-2xl cursor-pointer ml-4" />
           {totalItems !== null && (

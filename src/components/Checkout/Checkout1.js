@@ -70,7 +70,10 @@ const Checkout = ({ cart }) => {
   }, []);
 
   return (
-    <div> <h4 className='checkout-head '>Checkout</h4>
+    <div className='main-container'> 
+       <div className="section-head col-sm-12">
+        <h4><span>Check </span>Out</h4>
+      </div>
     <div className="checkout-container">
       <form className="checkout-form" action="//httpbin.org/post" method="POST">
       <input type="hidden" name="token" />

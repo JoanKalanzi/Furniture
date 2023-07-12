@@ -15,10 +15,6 @@ const FurnitureCard = ({ product, onAddToCart }) => {
           <div className="product-title bigger-title">
             {product.name}
           </div>
-          <div
-          className="product-description"
-          dangerouslySetInnerHTML={{ __html: product.description }}
-        />
         </div>
        <div className="product-price">£{product.price.formatted}</div>
       </div>
