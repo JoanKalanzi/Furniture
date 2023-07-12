@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink, useLocation , useNavigate } from 'react-router-dom';
 import { BsFillBasket2Fill } from 'react-icons/bs';
-import Logo from './images/logo1.png';
+import Logo from '../images/logo1.png';
 
 function NavTabs({ isLoggedIn, handleLogout ,  totalItems}) {
   const navigate = useNavigate();

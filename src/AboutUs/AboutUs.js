@@ -3,7 +3,7 @@ import './AboutUs.css';
 
 const AboutUs = () => {
   return (
-    <div className="feat bg-gray pt-5 pb-5">
+    <><div className="feat bg-gray pt-5 pb-5">
       <div className="container-fluid">
         <div className="row">
           <div className="section-head col-sm-12">
@@ -54,7 +54,47 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
+
+      <section>
+    <section className="team-page-section">
+        <div className="container">
+        <div className="section-head col-sm-12">
+            <h4><span>Our </span> Team</h4>
+        </div>
+
+            <div className="row-clearfix">
+                <div className="team-block col-lg-4 col-md-6 col-sm-12">
+                    <div className="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                        <div className="image">
+                           <img src="https://ca.slack-edge.com/TBPN1712Q-U051LGS86MU-98feb1a9c6d5-512" alt="Jessie" />
+                        </div>
+                        <div className="lower-content">
+                            <h3>Jessie Kinganga</h3>
+                            <div className="designation">CEO & Co-Founder </div>
+                        </div>
+                    </div>
+                </div>
+               
+                <div className="team-block col-lg-4 col-md-6 col-sm-12">
+                    <div className="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                        <div className="image">
+                          <img src="https://ca.slack-edge.com/TBPN1712Q-U051VK0GRRA-2dfd8a251e7f-512" alt="Joan" />
+                        </div>
+                        <div className="lower-content">
+                            <h3>Joan Kalanzi</h3>
+                            <div className="designation">CEO & Co-Founder</div>
+                        </div>
+                    </div>
+                </div>
+              
+
+            </div>
+        </div>
+    </section>
+</section>
     </div>
+    
+    </>
     
     
   );
