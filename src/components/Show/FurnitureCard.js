@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './FurnitureCard.css';
 
 const FurnitureCard = ({ product, onAddToCart }) => {
@@ -6,20 +7,20 @@ const FurnitureCard = ({ product, onAddToCart }) => {
 
   return (
     <section className="container">
-      <div>
+       <Link to={`/show/${product.id}`} className="product-link">
         <img src={product.image.url} alt={product.name} />
-      </div>
+      </Link>
       <div className="card-content">
         <div className="card-text">
           <div className="product-title bigger-title">
             {product.name}
           </div>
-          <div className="product-price">£{product.price.formatted}</div>
-        </div>
-        <div
+          <div
           className="product-description"
           dangerouslySetInnerHTML={{ __html: product.description }}
         />
+        </div>
+       <div className="product-price">£{product.price.formatted}</div>
       </div>
       <div className="card-actions">
         <button className="add-to-cart-button" onClick={handleAddToCart}>
