@@ -30,15 +30,16 @@ function NavTabs({ isLoggedIn, handleLogout ,  totalItems}) {
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink
-              to="/show"
-              className={({ isActive }) =>
-                isActive ? 'nav-link active' : 'nav-link'
-              }
-            >
-              Store
-            </NavLink>
-          </li>
+  <NavLink
+    to="/show"
+    className={({ isActive }) =>
+      isActive ? 'nav-link active' : 'nav-link'
+    }
+  >
+    Store
+  </NavLink>
+</li>
+
           {isLoggedIn && (
             <li className="nav-item">
               <NavLink
@@ -77,14 +78,14 @@ function NavTabs({ isLoggedIn, handleLogout ,  totalItems}) {
 
   {isLoggedIn ? (
     <>
-      {location.pathname === "/show"  && (
-        <NavLink to="/cart" className="flex items-center">
-          <BsFillBasket2Fill className="text-2xl cursor-pointer ml-4" />
-          {totalItems !== null && (
-            <span className="text-xl cursor-pointer ml-2 cart-items">{totalItems}</span>
-          )}
-        </NavLink>
-      )}
+   {location.pathname.startsWith("/show") && (
+  <NavLink to="/cart" className="flex items-center">
+    <BsFillBasket2Fill className="text-2xl cursor-pointer ml-4" />
+    {totalItems !== null && (
+      <span className="text-xl cursor-pointer ml-2 cart-items">{totalItems}</span>
+    )}
+  </NavLink>
+)}
       <button className="login-button text-xl cursor-pointer ml-4" onClick={handleLogoutClick}>
         Logout
       </button>

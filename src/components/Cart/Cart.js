@@ -14,9 +14,13 @@ const Cart = ({ cart , handleUpdateCart ,handleRemoveFromCart,handleEmptyCart}) 
   const isEmpty = !cart.line_items.length;
 
   const EmptyCart = () => (
-    <p>Your shopping cart is empty,
-      <Link to="/show">Start adding some..</Link>!
+    <div className='empty-cart'>
+    <p>Your shopping cart is empty!
+      <Link to="/show">
+       <button className='cart-empty'>Back to Store </button>
+       </Link>
     </p>
+    </div>
 
   );
 
@@ -43,11 +47,14 @@ const Cart = ({ cart , handleUpdateCart ,handleRemoveFromCart,handleEmptyCart}) 
   );
 
   return (
-    <div className="container">
-      <p>Your Shopping Cart</p>
-      {isEmpty ? <EmptyCart /> : <FilledCart />}
-    </div>
-  );
+    <div className="section-head col-sm-12">
+    <h4>Your Shopping
+    <span> Cart</span> 
+   </h4>
+   {isEmpty ? <EmptyCart /> : <FilledCart />}
+   </div>
+
+  )
 };
 
 export default Cart;
