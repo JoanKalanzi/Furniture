@@ -4,8 +4,7 @@ body {
 
 /* Grid CSS */
 
-#heroGrid {
-  margin: 0px 5%;
+.heroGrid {
   display: grid;
   min-height: 500px;
   height: 70vh;
@@ -14,6 +13,15 @@ body {
   grid-template-areas:
   "featuredProduct secondaryProduct"
   "featuredProduct CTA";
+}
+
+.CTA {
+  display: flex;
+  justify-content: flex-end;
+  width: 25%;
+}
+.CTA img {
+  cursor: pointer;
 }
 /* 
 #featuredProduct {

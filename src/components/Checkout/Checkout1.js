@@ -70,46 +70,48 @@ const Checkout = ({ cart }) => {
   }, []);
 
   return (
-    <form action="//httpbin.org/post" method="POST">
+    <div> <h4 className='checkout-head '>Checkout</h4>
+    <div className="checkout-container">
+      <form className="checkout-form" action="//httpbin.org/post" method="POST">
       <input type="hidden" name="token" />
       <div className="group">
-        <label>
-          <span>Card</span>
+        <label className='checkout-label'>
+          <span>Card Number</span>
           <div id="card-element" className="field"></div>
         </label>
       </div>
       <div className="group">
-        <label>
+        <label className='checkout-label'>
           <span>First name</span>
           <input id="first-name" name="first-name" className="field" placeholder="John" />
         </label>
-        <label>
+        <label className='checkout-label'>
           <span>Last name</span>
           <input id="last-name" name="last-name" className="field" placeholder="Smith" />
         </label>
       </div>
       <div className="group">
-        <label>
+        <label className='checkout-label'>
           <span>Address</span>
           <input id="address-line1" name="address_line1" className="field" placeholder="1 Lodge Lane" />
         </label>
-        <label>
+        <label className='checkout-label'>
           <span>Address (cont.)</span>
           <input id="address-line2" name="address_line2" className="field" placeholder="" />
         </label>
-        <label>
+        <label className='checkout-label'>
           <span>City</span>
           <input id="address-city" name="address_city" className="field" placeholder="Oxford" />
         </label>
-        <label>
+        <label className='checkout-label'>
           <span>County</span>
           <input id="address-state" name="address_state" className="field" placeholder="Oxfordshire" />
         </label>
-        <label>
+        <label className='checkout-label'>
           <span>Post Code</span>
           <input id="address-zip" name="address_zip" className="field" placeholder="OX1 1AB" />
         </label>
-        <label>
+        <label className='checkout-label'>
           <span>Country</span>
           <select name="address_country" id="address-country" className="field">
             <option value="UK" selected>United Kingdom</option>
@@ -124,7 +126,10 @@ const Checkout = ({ cart }) => {
         </div>
       </div>
     </form>
+    </div>
+    </div>
   );
 };
 
 export default Checkout;
+

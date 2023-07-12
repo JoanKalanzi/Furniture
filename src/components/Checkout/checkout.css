@@ -1,9 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 
-form {
-  width: 480px;
-  margin: 20px 0;
+.checkout-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
 }
+
+.checkout-form {
+  max-width: 500px;
+  width: 100%;
+  margin-right: 20px;
+}
+
+.checkout-head{
+  position: relative;
+  padding: 0;
+  color: #D4AFB9;
+  line-height: 1;
+  letter-spacing: 0.3px;
+  font-size: 34px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: none;
+  padding-top: 2rem;
+}
+
 
 .group {
   background: white;
@@ -12,9 +35,9 @@ form {
   margin-bottom: 20px;
 }
 
-label {
+.checkout-label {
   position: relative;
-  color: #8898AA;
+  color: #050505;
   font-weight: 300;
   height: 40px;
   line-height: 40px;
@@ -26,7 +49,7 @@ label {
   border-bottom: 1px solid #F0F5FA;
 }
 
-label > span {
+.checkout-label > span {
   width: 120px;
   text-align: right;
   margin-right: 30px;
@@ -69,11 +92,11 @@ label > span {
   outline: none;
 }
 
-button:focus {
+.checkout-button:focus {
   background: #555ABF;
 }
 
-button:active {
+.checkout-button:active {
   background: #43458B;
 }
 
@@ -93,6 +116,8 @@ button:active {
 
 .success.visible,
 .error.visible {
+  font-size: 'Poppins',  sans-serif;
+  font-weight: 600;
   display: inline;
 }
 

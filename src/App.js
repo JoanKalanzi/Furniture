@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './components/Home/Home';
-import Footer from './components/Footer/Footer';
+// import Footer from './components/Footer/Footer';
 import FurnitureList from './components/Show/Products/FurnitureList';
 import AddFurniture from './components/Create/AddNewFurniture';
 import { commerce } from './lib/commerce';
@@ -94,7 +94,7 @@ function App() {
           <Route exact path="/about" element={<AboutUs/>}/>
           <Route path="/checkout" element={<Checkout />} />
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </Router>
   );

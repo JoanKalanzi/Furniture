@@ -34,7 +34,7 @@ header {
   display: block;
   height: 2px;
   width: 100%;
-  background-color: #dbb5e8;
+  background-color: #666EE8;
   margin-top: 5px;
 }
 /* NavItem Font Styling */
@@ -50,8 +50,12 @@ header {
   width: 25%;
 }
 
+
+
 .login-button {
-  font-size: 1.25rem; 
+  padding: 5px 10px;
+  font-size: 1rem; 
+  font-weight: 600;
   cursor: pointer;
   padding: 0.5rem 0.75rem; 
   background-color: #D4AFB9; 
@@ -61,6 +65,7 @@ header {
 }
 
 .login-button:hover {
-  background-color: #efc6d1; 
-  color: gray; 
+  background-color: #010101; 
+  color: rgb(255, 255, 255); 
 }
+
