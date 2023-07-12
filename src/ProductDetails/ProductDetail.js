@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { commerce } from '../lib/commerce';
-import './ProductDetail.css'; // Import the CSS file
+import './ProductDetail.css'; 
+import { Link } from 'react-router-dom';
 
 const ProductDetail = ({ products, onAddToCart }) => {
   const { id } = useParams();
@@ -27,33 +28,38 @@ const ProductDetail = ({ products, onAddToCart }) => {
   }
 
   return (
-    <div className="product-detail-container">
-      <div className="section-head col-sm-12">
-        <h4>
-          <span>Product </span> Detail
-        </h4>
-        <div className='image-container'>
-        <img src={product.image.url} alt={product.name} />
-        </div>
-      
-      </div>
-     
-      <div className="card-content">
-        <div className="card-text">
-          <div className="product-title bigger-title">{product.name}</div>
-          <div
-            className="product-description"
-            dangerouslySetInnerHTML={{ __html: product.description }}
-          />
-        </div>
-        <div className="product-price">£{product.price.formatted}</div>
-      </div>
-      <div className="card-actions">
-        <button className="add-to-cart-button" onClick={handleAddToCart}>
-          Add to Cart
-        </button>
-      </div>
+    <>
+    <div className="section-head col-sm-12">
+    <h4>Product
+    <span> Details</span> 
+   </h4>
+   </div>
+
+    <div className='product'>
+    <div className='details'> 
+    <div className='big-img'>
+    <img src={product.image.url} alt={product.name} />
     </div>
+    <div className='box'>
+      <div className='row'>
+        <h2>Product: {product.name}</h2>
+        <span>Price : £{product.price.formatted}</span>
+      </div>
+   
+       <p dangerouslySetInnerHTML={{ __html: product.description }}>
+ 
+       </p>
+      <div className='buttons'>
+       <button className='cart' onClick={handleAddToCart}>Add to Cart </button>
+       <Link to="/show">
+       <button className='cart'>Back to Store </button>
+       </Link>
+       </div>
+    </div>
+    </div>
+    </div>
+
+   </>
   );
 };
 

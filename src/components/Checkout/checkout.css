@@ -6,6 +6,10 @@
   align-items: center;
   justify-content: center;
   height: 80vh;
+ 
+}
+.main-container{
+  overflow: hidden;
 }
 
 .checkout-form {
@@ -134,10 +138,15 @@
   font-size: 13px;
 }
 
-.success-message {
+/* .success-message {
   height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+} */
+
+.section-head{
+  margin-top: 50px;
+
 }
