@@ -17,7 +17,7 @@ const CartItem = ({ item, onUpdateQty, onRemoveQty }) => {
           <p className='item-quantity'>{item.quantity}</p>
           <button className='quantity-button plus-button'onClick={()=> onUpdateQty(item.id, item.quantity + 1)}>+</button>
         </div>
-        <button className='remove-button'onClick={()=> onRemoveQty(item.id)}>Remove</button>
+        <button className="add-to-cart-button"onClick={()=> onRemoveQty(item.id)}>Remove</button>
       </div>
     </div>
   );
