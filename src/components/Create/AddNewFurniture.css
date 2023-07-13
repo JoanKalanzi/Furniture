@@ -1,48 +1,239 @@
-.add-furniture {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  background-color: #fff;
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap');
+
+:root {
+  --primary-bg-color: #F7B1AB;
+  --secondary-bg-color: #807182;
+  --font-color: rgba(0,0,0,.8);
+  --font-family: 'Montserrat',sans-serif;
+  --form-border-color: rgba(0,0,0,.1);
 }
 
-.add-furniture-heading {
+
+
+.signup-container {
+  display: grid;
+  grid-template-areas: "left right";
+  width: 950px;
+  border: 1px solid black;
+}
+
+
+.left-container {
+  background: #adbcce;
+  overflow: hidden;
+  padding: 40px 0 0 0;
+  position: relative;
   text-align: center;
+  width: 300px;
+  margin-right: 3rem;
+}
+
+.left-container h1 {
+  color: var(--font-color);
+  display: inline-block;
   font-size: 24px;
-  margin-bottom: 20px;
 }
 
-.add-furniture-form .form-group {
-  margin-bottom: 20px;
+.left-container h1 i {
+  background: var(--primary-bg-color);
+  border-radius: 50%;
+  color: var(--secondary-bg-color);
+  font-size: 24px;
+  margin-right: 5px;
+  padding: 10px;
+  transform: rotate(-45deg);
 }
 
-.form-label {
-  display: block;
+.left-container .puppy {
+  bottom: -5px;
+  position: absolute;
+  text-align: center;
+}
+
+
+
+.left-container img {
+  width: 100%;
+}
+
+.right-container {
+  background: lighten(var(--primary-bg-color), 5%);
+  display: grid;
+  grid-template-areas: "." ".";
+  width: 550px;
+}
+
+.right-container h1:nth-of-type(1) {
+  color: var(--font-color);
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.right-container .set {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.right-container input {
+  border: 1px solid var(--form-border-color);
+  border-radius: 4px;
+  height: 38px;
+  line-height: 38px;
+  padding-left: 5px;
+}
+
+.right-container input,
+.right-container label {
+  color: var(--font-color);
+}
+
+.right-container header {
+  padding: 40px;
+}
+
+.right-container label,
+.right-container input,
+.right-container .pets-photo {
+  width: 176px;
+}
+
+.right-container .pets-photo {
+  align-items: center;
+  display: grid;
+  grid-template-areas: ". .";
+}
+
+.right-container .pets-photo button {
+  border: none;
+  border-radius: 50%;
+  height: 38px;
+  margin-right: 10px;
+  outline: none;
+  width: 38px;
+}
+
+.right-container .pets-photo button i {
+  color: var(--font-color);
   font-size: 16px;
+}
+
+.right-container .pets-weight .radio-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.right-container footer {
+  align-items: center;
+  background: #fff;
+  display: grid;
+  padding: 5px 40px;
+}
+
+.right-container footer button {
+  border: 1px solid rgba(0,0,0,.2);
+  height: 38px;
+  line-height: 38px;
+  width: 100px;
+  border-radius: 19px;
+  font-family: var(--font-family);
+}
+
+.right-container footer #back {
+  background: #fff;
+  transition: .2s all ease-in-out;
+}
+
+.right-container footer #back:hover {
+  background: #171A2B;
+  color: white;
+}
+
+.right-container footer #next {
+  background: var(--secondary-bg-color);
+  border: 1px solid transparent;
+  color: #fff;
+}
+
+.right-container footer #next:hover {
+  background: #171A2B;
+}
+
+.pets-name,
+.pets-breed,
+.pets-birthday,
+.pets-gender,
+.pets-spayed-neutered,
+.pets-weight {
+  margin-bottom: 10px;
+}
+
+.pets-name label,
+.pets-breed label,
+.pets-birthday label,
+.pets-gender label,
+.pets-spayed-neutered label,
+.pets-weight label {
+  display: block;
   margin-bottom: 5px;
 }
 
-.form-input {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ddd;
+.radio-container {
+  background: #fff;
+  border: 1px solid var(--form-border-color);
   border-radius: 4px;
+  display: inline-block;
+  padding: 5px;
 }
 
-.form-submit-btn {
+.radio-container label {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  transition: .2s all ease-in-out;
+  width: 80px;
+}
+
+.radio-container input[type="radio"] {
+  display: none;
+}
+
+.radio-container input[type="radio"]:checked + label {
+  background: var(--primary-bg-color);
+  border: 1px solid var(--form-border-color);
+}
+
+.center-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding-top: 2rem;
+}
+
+.checkout-button {
+  float: left;
   display: block;
-  width: 100%;
-  padding: 10px;
-  font-size: 18px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
+  background: #666EE8;
+  color: white;
+  box-shadow: 0 7px 14px 0 rgba(49, 49, 93, 0.10), 0 3px 6px 0 rgba(0, 0, 0, 0.08);
   border-radius: 4px;
-  cursor: pointer;
+  border: 0;
+  margin-top: 20px;
+  font-size: 15px;
+  font-weight: 400;
+  width: 100%;
+  height: 40px;
+  line-height: 38px;
+  outline: none;
 }
-
-.form-submit-btn:hover {
-  background-color: #0056b3;
+.check-bnt{
+  padding-bottom: 1rem;
 }

@@ -17,7 +17,9 @@ function Home() {
       </section>
 
       <div class="subHeading">
-      <h3>Shop Our New Collection</h3>
+      <h4>Shop Our New
+    <span> Collection</span> 
+   </h4>
     </div>
 
     <section id="categoryGrid" className="grid">

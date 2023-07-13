@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import './checkout.css';
 
+
 const Checkout = ({ cart }) => {
   const cartTotal = cart ? cart.subtotal.formatted_with_symbol : '';
 
@@ -129,8 +130,9 @@ const Checkout = ({ cart }) => {
         </div>
       </div>
     </form>
+        </div>
     </div>
-    </div>
+
   );
 };
 

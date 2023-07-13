@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@400;600&display=swap');
 
 .home-banner {
-  background-image:
-    url("../images//bg1.png");
+  /* background-image:
+    url("../images//bg1.png"); */
   background-size: cover;
   background-repeat: no-repeat;
   height: 90vh;
@@ -10,8 +10,8 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  /* background-image: linear-gradient(rgba(11, 11, 11, 0.2), rgba(0, 0, 0, 0.2)),
-  url("../images/banner.png"); */
+  background-image: linear-gradient(rgba(11, 11, 11, 0.2), rgba(0, 0, 0, 0.2)),
+  url("../images/banner.png");
 }
 
 .headline {
@@ -104,4 +104,23 @@
   font-family: "Ysabeau", sans-serif;
   font-weight: 600;
   font-size: 20px;
+  display: none;
 }
+
+/* .subHeading h4:before {
+  content: '';
+  width: 60px;
+  height: 3px;
+  background: #D4AFB9;
+  position: absolute;
+  left: 0px;
+  bottom: -10px;
+  right: 0;
+  margin: 0 auto;
+}
+
+.section-head h4 span {
+  font-weight: 700;
+  padding-bottom: 5px;
+  color: #2f2f2f;
+} */
