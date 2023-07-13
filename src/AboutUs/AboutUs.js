@@ -3,7 +3,7 @@ import './AboutUs.css';
 
 const AboutUs = () => {
   return (
-    <><div className="feat bg-gray pt-5 pb-5">
+    <><div className="about-pg feat bg-gray pt-5 pb-5">
       <div className="container-fluid">
         <div className="row">
           <div className="section-head col-sm-12">

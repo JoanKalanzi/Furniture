@@ -36,7 +36,7 @@ export default function Login({ setToken }) {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen">
+    <div className="login-pg flex justify-center items-center min-h-screen">
       <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-full max-w-md">
 
       {error && <div className="error">{error}</div>}
@@ -76,12 +76,14 @@ export default function Login({ setToken }) {
           </div>
           <div className="flex items-center justify-center">
           
-            <button
-              type="submit"
-              className="bg-gradient-to-r from-orange-500 to-orange-700 hover:from-orange-700 hover:to-orange-900 text-white font-bold py-3 px-4 rounded focus:outline-none focus:shadow-outline w-full"
-            >
-              LogIn
-            </button>
+          <button
+        type="submit"
+        className="logInButton button bg-orange-500 hover:bg-black text-white font-bold py-3 px-4 rounded focus:outline-none focus:shadow-outline w-full mt-8"
+      >
+        LogIn
+      </button>
+
+
             
           </div>
         </form>

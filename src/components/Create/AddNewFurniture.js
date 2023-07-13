@@ -30,6 +30,8 @@ const AddFurniture = () => {
  
 
   return (
+    <div className="section-head col-sm-12">
+            <h4><span>Custom </span> Order</h4>
     <div className="center-form">
       <form className="signup-container" onSubmit={handleSubmit}>
         <div className="left-container">
@@ -108,6 +110,7 @@ const AddFurniture = () => {
           </div>
         </div>
       </form>
+    </div>
     </div>
   );
   }

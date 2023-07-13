@@ -47,7 +47,7 @@ const ProductDetail = ({ products, onAddToCart }) => {
       
       </div>
    
-       <p dangerouslySetInnerHTML={{ __html: product.description }}>
+       <p className='product-detail' dangerouslySetInnerHTML={{ __html: product.description }}>
  
        </p>
       <div className='buttons'>
