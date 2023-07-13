@@ -69,11 +69,11 @@ const AddFurniture = () => {
           </div>
           <div className="set">
             <div className="pets-breed">
-              <label htmlFor="pets-breed">Colour</label>
+              <label htmlFor="pets-breed">Material</label>
               <input type="text" id="pets-breed" placeholder="Velvet"  />
             </div>
             <div className="pets-birthday">
-              <label htmlFor="pets-birthday">Material</label>
+              <label htmlFor="pets-birthday">Colour</label>
               <input type="text" id="pets-birthday" placeholder="Teal"  />
             </div>
           </div>
