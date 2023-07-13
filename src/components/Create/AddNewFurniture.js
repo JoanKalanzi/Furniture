@@ -1,64 +1,57 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './AddNewFurniture.css';
 import CheckImg from '../images/checkbg1.png';
 import Logo from '../images/logo1.png';
 import { AiFillCamera } from 'react-icons/ai';
 import { useNavigate } from 'react-router-dom';
 
-const AddFurniture = ({ onAddFurniture }) => {
-  const [furnitureType, setFurnitureType] = useState('');
-  const [colour, setColour] = useState('');
-  const [material, setMaterial] = useState('');
-  const [priceRange, setPriceRange] = useState('');
-  const [picture, setPicture] = useState('');
-  const [additionalDescription, setAdditionalDescription] = useState('');
-  const [submitted, setSubmitted] = useState(false);
-
+const AddFurniture = () => {
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Handle the form data directly
+    const formData = new FormData(e.target);
     const newFurniture = {
-      furnitureType,
-      colour,
-      material,
-      priceRange,
-      picture,
-      additionalDescription,
+      furnitureType: formData.get('furnitureType'),
+      colour: formData.get('colour'),
+      material: formData.get('material'),
+      priceRange: formData.get('priceRange'),
+      picture: '',
+      additionalDescription: formData.get('additional-info'),
     };
-    onAddFurniture(newFurniture);
-    setFurnitureType('');
-    setColour('');
-    setMaterial('');
-    setPriceRange('');
-    setPicture('');
-    setAdditionalDescription('');
-    setSubmitted(true);
+    console.log(newFurniture);
 
     // Redirect to the success page
     navigate('/success');
   };
 
-  if (submitted) {
-    return (
-      <div className="center-form">
-        <div className="thank-you-message">
-          <h2>Thank you for your custom request!</h2>
-          <p>A member of our team will get in touch with you to discuss further.</p>
-        </div>
-      </div>
-    );
-  }
+ 
 
   return (
+
     <><div className="section-head col-sm-12">
       <h4><span>Custom </span> Order</h4>
     </div><div className="center-form">
         <form className="signup-container" onSubmit={handleSubmit}>
           <div className="left-container">
+
+    <div className="center-form">
+      <form className="signup-container" onSubmit={handleSubmit}>
+        <div className="left-container">
+          <img
+            src={process.env.PUBLIC_URL + Logo}
+            alt="logo"
+            
+            className="mylogo"
+          />
+          <div className="puppy">
+
             <img
               src={process.env.PUBLIC_URL + Logo}
               alt="logo"
+
               width={'1%'}
               className="mylogo" />
             <div className="puppy">
@@ -95,6 +88,38 @@ const AddFurniture = ({ onAddFurniture }) => {
                 <label htmlFor="pets-birthday">Material</label>
                 <input type="text" id="pets-birthday" placeholder="Teal" value={material} onChange={(e) => setMaterial(e.target.value)} />
               </div>
+
+              width={'40%'}
+              className="checkout-image"
+              style={{ float: 'left', marginRight: '10px' }}
+            />
+          </div>
+        </div>
+        <div className="right-container">
+          <header>
+            <h1>Struggling to find what you need? Discover the perfect match with our personalized form!</h1>
+          </header>
+          <div className="set">
+            <div className="pets-name">
+              <label htmlFor="pets-name">Furniture Type</label>
+              <input type="text" id="pets-name" placeholder="Sofa" />
+            </div>
+            <div className="pets-photo">
+              <button id="pets-upload">
+                <AiFillCamera />
+              </button>
+              <label htmlFor="pets-upload">Upload a photo</label>
+            </div>
+          </div>
+          <div className="set">
+            <div className="pets-breed">
+              <label htmlFor="pets-breed">Colour</label>
+              <input type="text" id="pets-breed" placeholder="Velvet"  />
+            </div>
+            <div className="pets-birthday">
+              <label htmlFor="pets-birthday">Material</label>
+              <input type="text" id="pets-birthday" placeholder="Teal"  />
+
             </div>
             <div className="set">
               <div className="pets-gender">
