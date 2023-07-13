@@ -13,6 +13,7 @@ import AboutUs from './AboutUs/AboutUs';
 import Checkout from './components/Checkout/Checkout1';
 import ProductDetail from './ProductDetails/ProductDetail';
 import Success from './components/Create/Success'
+import Footer from './components/Footer/Footer';
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -94,7 +95,7 @@ function App() {
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/success" element={<Success />} />
         </Routes>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </Router>
   );

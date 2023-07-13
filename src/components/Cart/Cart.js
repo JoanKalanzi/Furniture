@@ -35,10 +35,10 @@ const Cart = ({ cart , handleUpdateCart ,handleRemoveFromCart,handleEmptyCart}) 
       </div>
       <div className="item-details">
         <p>Subtotal: {cart.subtotal.formatted_with_symbol}</p>
-        <div className="button-container">
-          <button onClick ={handleEmptyCart}>Empty Cart</button>
+        <div className="card-actions">
+          <button className="add-to-cart-button"onClick ={handleEmptyCart}>Empty Cart</button>
           <Link to="/checkout">
-            <button>Checkout</button>
+            <button className="add-to-cart-button">Checkout</button>
             
           </Link>
         </div>
