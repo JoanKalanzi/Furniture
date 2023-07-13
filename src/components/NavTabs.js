@@ -66,12 +66,15 @@ function NavTabs({ isLoggedIn, handleLogout ,  totalItems}) {
         </ul>
 
         <div className="flex items-center justify-center w-1/5">
+       
           <img
             src={process.env.PUBLIC_URL + Logo}
             alt="logo"
             width={'30%'}
             className="mylogo"
           />
+       
+      
         </div>
        
         <div className="icons w-1/4 flex justify-end items-center">
