@@ -1,5 +1,6 @@
 import React from "react"
 import "./footer.css"
+import Logo from '../images/logo1.png';
 
 
 const Footer = () => {
@@ -10,9 +11,13 @@ const Footer = () => {
           <div className="box">
             <div className="logo flex items-center">
               <ion-icon name="bag"></ion-icon>
-              <h1 className="text-xl font-bold ml-2">JK</h1>
+              <img
+            src={process.env.PUBLIC_URL + Logo}
+            alt="logo"
+            width={'1%'}
+            className="mylogo"
+          />
             </div>
-            <p className="mt-4">JK Living & Co</p>
           </div>
           <div className="box">
             <h2 className="footer-text text-lg font-semibold">About Us</h2>

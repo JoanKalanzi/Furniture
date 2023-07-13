@@ -12,6 +12,7 @@ import Login from './components/Login/login';
 import AboutUs from './AboutUs/AboutUs';
 import Checkout from './components/Checkout/Checkout1';
 import ProductDetail from './ProductDetails/ProductDetail';
+import Success from './components/Create/Success'
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -91,6 +92,7 @@ function App() {
           <Route path="/login" element={<Login setToken={handleLogin} />} />
           <Route exact path="/about" element={<AboutUs />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/success" element={<Success />} />
         </Routes>
         {/* <Footer /> */}
       </div>
