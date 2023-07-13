@@ -308,26 +308,33 @@ background-color:#f5f5f5;
 transition:all 600ms ease;
 }
 
-.team-block .inner-box::after{
-position:absolute;
-content:'';
-top:0px;
-left:70px;
-bottom:0px;
-width:0%;
-border-radius:10px;
--webkit-transition:all 600ms ease;
--moz-transition:all 600ms ease;
--ms-transition:all 600ms ease;
--o-transition:all 600ms ease;
-transition:all 600ms ease;
-background-image: -ms-linear-gradient(top, #ffca08 0%, #f70067 100%);
-background-image: -moz-linear-gradient(top, #ffca08 0%, #f70067 100%);
-background-image: -o-linear-gradient(top, #ffca08 0%, #f70067 100%);
-background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ffca08), color-stop(100, #f70067));
-background-image: -webkit-linear-gradient(top, #ffca08 0%, #f70067 100%);
-background-image: linear-gradient(to bottom, #ffca08 0%, #f70067 100%);
+.team-block .inner-box::after {
+  position: absolute;
+  content: '';
+  top: 0px;
+  left: 70px;
+  bottom: 0px;
+  width: 0%;
+  border-radius: 10px;
+  -webkit-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  -o-transition: all 600ms ease;
+  transition: all 600ms ease;
+  background-image: -ms-linear-gradient(top, #D4AFB9 0%, #ff9600 100%);
+  background-image: -moz-linear-gradient(top, #D4AFB9 0%, #ff9600 100%);
+  background-image: -o-linear-gradient(top, #D4AFB9 0%, #ff9600 100%);
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0, #D4AFB9),
+    color-stop(100, #ff9600)
+  );
+  background-image: -webkit-linear-gradient(top, #D4AFB9 0%, #ff9600 100%);
+  background-image: linear-gradient(to bottom, #D4AFB9 0%, #ff9600 100%);
 }
+
 
 .team-block .inner-box:hover::after{
 width:81%;
@@ -402,7 +409,7 @@ transition: all 0.4s;
 .team-block .inner-box .lower-content .designation{
 position:relative;
 margin-top:5px;
-color:#777777;
+color: black;
 font-size:14px;
 }
 
