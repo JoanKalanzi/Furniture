@@ -29,7 +29,7 @@ export default function Login({ setToken }) {
     try {
       const token = await loginUser({ username, password });
       setToken(token);
-      navigate('/'); // Redirect to the home page
+      navigate('/show'); // Redirect to the home page
     } catch (error) {
       setError(error.message);
     }
@@ -75,12 +75,14 @@ export default function Login({ setToken }) {
             </div>
           </div>
           <div className="flex items-center justify-center">
+          
             <button
               type="submit"
               className="bg-gradient-to-r from-orange-500 to-orange-700 hover:from-orange-700 hover:to-orange-900 text-white font-bold py-3 px-4 rounded focus:outline-none focus:shadow-outline w-full"
             >
               LogIn
             </button>
+            
           </div>
         </form>
         <p className="text-center text-gray-600 mt-6">

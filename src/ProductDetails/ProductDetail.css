@@ -39,6 +39,8 @@
   margin-bottom:20px ;
   text-transform: uppercase;
   letter-spacing: 2px;
+  color: black;
+  font-family: 'Ysabeau SC', sans-serif;
 }
 .box .row span {
   color : #FF6200;
