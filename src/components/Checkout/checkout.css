@@ -96,6 +96,11 @@
   outline: none;
 }
 
+.checkout-button:hover {
+  background-color: #FF6200;
+  color: black;
+}
+
 .checkout-button:focus {
   background: #555ABF;
 }

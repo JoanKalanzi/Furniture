@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+.product-detail{
+  font-family: 'Poppins', sans-serif;
+}
+
 .product{
   max-width: 1200px;
   width:100%;
@@ -55,6 +61,7 @@
   justify-content: space-around;
 }
 .box .cart{
+  font-family: 'Poppins', sans-serif;
   background: #D4AFB9;
   color:black;
   outline: none;

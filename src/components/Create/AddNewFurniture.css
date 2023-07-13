@@ -1,16 +1,16 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 :root {
   --primary-bg-color: #F7B1AB;
   --secondary-bg-color: #807182;
   --font-color: rgba(0,0,0,.8);
-  --font-family: 'Montserrat',sans-serif;
   --form-border-color: rgba(0,0,0,.1);
 }
 
 
 
 .signup-container {
+  font-family: 'Poppins', sans-serif;
   display: grid;
   grid-template-areas: "left right";
   width: 950px;
@@ -214,9 +214,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   padding-top: 2rem;
+  margin-bottom: 30vh;
 }
+
 
 .checkout-button {
   float: left;
@@ -234,6 +235,30 @@
   line-height: 38px;
   outline: none;
 }
+
+.checkout-button:hover {
+  background-color: #FF6200;
+  color: black;
+}
+
 .check-bnt{
   padding-bottom: 1rem;
+}
+
+.section-head h4:before {
+  content: '';
+  width: 60px;
+  height: 3px;
+  background: #D4AFB9;
+  position: absolute;
+  left: 0px;
+  bottom: -10px;
+  right: 0;
+  margin: 0 auto;
+}
+
+.section-head h4 span {
+  font-weight: 700;
+  padding-bottom: 5px;
+  color: #2f2f2f;
 }
